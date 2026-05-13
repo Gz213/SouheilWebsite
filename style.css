@@ -148,6 +148,24 @@ body {
     text-transform: uppercase;
 }
 
+.btn-bio-top {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.btn-bio-top:hover {
+    color: var(--accent-pure);
+    border-color: var(--primary-indigo-light);
+    background: rgba(99, 102, 241, 0.1);
+}
+
 .nav-links {
     display: flex;
     list-style: none;

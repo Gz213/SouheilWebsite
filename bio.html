@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie - Souheil</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bio-page">
+    <div class="background-effects">
+        <div class="grain-overlay"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html" class="btn-back"><i class="ph ph-arrow-left"></i> RETOUR</a>
+    </nav>
+
+    <main class="bio-container">
+        <h1 class="hero-title">BIOGRAPHIE</h1>
+        <div class="glass-panel bio-content">
+            <p class="hero-bio">
+                Le texte de votre biographie sera inséré ici dès que vous me le communiquerez.
+            </p>
+        </div>
+    </main>
+
+    <style>
+        .bio-page .bio-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            text-align: center;
+        }
+        .bio-page .bio-content {
+            text-align: left;
+            padding: 4rem;
+            margin-top: 2rem;
+        }
+        .btn-back {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        .btn-back:hover {
+            color: var(--accent-pure);
+            transform: translateX(-5px);
+        }
+    </style>
+</body>
+</html>
