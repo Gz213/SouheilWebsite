@@ -1,16 +1,15 @@
 :root {
-    --primary-brown: #3E2723;
-    --primary-brown-light: #5D4037;
-    --bordeaux: #800020;
-    --bordeaux-light: #A52A2A;
-    --accent-gold: #D4AF37;
-    --accent-gold-glow: rgba(212, 175, 55, 0.3);
-    --accent-cream: #FDFBF7;
-    --glass-bg: rgba(26, 15, 13, 0.6);
-    --glass-border: rgba(212, 175, 55, 0.15);
-    --text-main: #FDFBF7;
-    --text-muted: rgba(253, 251, 247, 0.7);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --primary-deep: #050505;
+    --primary-indigo: #4338ca;
+    --primary-indigo-light: #6366f1;
+    --accent-silver: #e2e8f0;
+    --accent-silver-glow: rgba(226, 232, 240, 0.3);
+    --accent-pure: #ffffff;
+    --glass-bg: rgba(10, 10, 20, 0.7);
+    --glass-border: rgba(99, 102, 241, 0.2);
+    --text-main: #f8fafc;
+    --text-muted: rgba(248, 250, 252, 0.6);
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 * {
@@ -21,7 +20,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at 50% 0%, var(--primary-brown-light) 0%, #1a0f0d 100%);
+    background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--primary-deep) 100%);
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
@@ -66,7 +65,7 @@ body {
     right: -10%;
     width: 60vw;
     height: 60vw;
-    background: var(--bordeaux);
+    background: var(--primary-indigo);
     animation-delay: 0s;
 }
 
@@ -75,7 +74,7 @@ body {
     left: -10%;
     width: 50vw;
     height: 50vw;
-    background: var(--primary-brown);
+    background: #1e1b4b;
     animation-delay: -5s;
     opacity: 0.2;
 }
@@ -85,8 +84,8 @@ body {
     left: 40%;
     width: 30vw;
     height: 30vw;
-    background: var(--accent-gold);
-    opacity: 0.08;
+    background: var(--primary-indigo-light);
+    opacity: 0.1;
     animation-duration: 30s;
 }
 
@@ -107,10 +106,11 @@ body {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--accent-gold);
+    letter-spacing: 4px;
+    color: var(--accent-pure);
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -192,10 +192,10 @@ body {
     font-weight: 700;
     line-height: 0.9;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #fff 100%);
+    background: linear-gradient(135deg, var(--accent-pure) 0%, var(--primary-indigo-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
 }
 
 .hero-subtitle {
@@ -203,14 +203,14 @@ body {
     font-weight: 600;
     letter-spacing: 6px;
     margin-bottom: 0.5rem;
-    color: var(--accent-gold);
+    color: var(--primary-indigo-light);
     text-transform: uppercase;
 }
 
 .hero-tagline {
     font-family: 'Alex Brush', cursive;
     font-size: 2.5rem;
-    color: var(--accent-cream);
+    color: var(--accent-silver);
     margin-bottom: 1.5rem;
     opacity: 0.9;
     transform: rotate(-2deg);
@@ -222,7 +222,7 @@ body {
     line-height: 1.8;
     color: var(--text-muted);
     max-width: 450px;
-    border-left: 2px solid var(--bordeaux);
+    border-left: 2px solid var(--primary-indigo);
     padding-left: 2rem;
 }
 
@@ -254,10 +254,10 @@ body {
 }
 
 .glass-player:hover {
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(99, 102, 241, 0.4);
     box-shadow: 
         0 40px 80px rgba(0, 0, 0, 0.6),
-        0 0 20px var(--accent-gold-glow);
+        0 0 20px var(--accent-silver-glow);
 }
 
 .glass-player::before {
@@ -279,7 +279,7 @@ body {
 .now-playing-label {
     font-size: 0.75rem;
     letter-spacing: 2px;
-    color: var(--accent-gold);
+    color: var(--primary-indigo-light);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     display: block;
@@ -329,7 +329,7 @@ body {
 
 .progress {
     height: 100%;
-    background: var(--accent-gold);
+    background: var(--primary-indigo-light);
     border-radius: 3px;
     width: 0%;
     position: relative;
@@ -400,9 +400,9 @@ body {
 .play-btn {
     width: 60px;
     height: 60px;
-    background: var(--bordeaux);
+    background: var(--primary-indigo);
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(128, 0, 32, 0.3);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
 }
 
 .play-btn i {
@@ -411,9 +411,9 @@ body {
 }
 
 .play-btn:hover {
-    background: var(--bordeaux-light);
+    background: var(--primary-indigo-light);
     transform: scale(1.05);
-    box-shadow: 0 15px 25px rgba(128, 0, 32, 0.5);
+    box-shadow: 0 15px 25px rgba(79, 70, 229, 0.5);
 }
 .play-btn.playing i {
     margin-left: 0;
@@ -438,7 +438,7 @@ body {
 
 .volume-progress {
     height: 100%;
-    background: var(--accent-gold);
+    background: var(--primary-indigo-light);
     border-radius: 2px;
     width: 50%;
 }
@@ -468,7 +468,7 @@ body {
 .playlist-container h4 {
     font-weight: 500;
     margin-bottom: 1rem;
-    color: var(--accent-gold);
+    color: var(--primary-indigo-light);
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
@@ -488,7 +488,7 @@ body {
     background: rgba(255,255,255,0.05);
 }
 .playlist::-webkit-scrollbar-thumb {
-    background: var(--accent-gold);
+    background: var(--primary-indigo-light);
     border-radius: 4px;
 }
 
@@ -515,8 +515,8 @@ body {
 }
 
 .playlist-item.active {
-    color: var(--accent-gold);
-    background: rgba(212, 175, 55, 0.1);
+    color: var(--primary-indigo-light);
+    background: rgba(99, 102, 241, 0.1);
 }
 
 .playlist-item i {
