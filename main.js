@@ -225,3 +225,8 @@ function updatePlaylistActiveItem() {
 
 // Start
 initPlayer();
+
+// Protect against right-click downloads
+glassPlayer.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});

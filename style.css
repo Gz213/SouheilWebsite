@@ -12,6 +12,29 @@
     --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.btn-buy {
+    background: transparent;
+    color: var(--primary-indigo-light);
+    border: 1px solid var(--primary-indigo-light);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-buy:hover {
+    background: var(--primary-indigo-light);
+    color: white;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
 * {
     margin: 0;
     padding: 0;

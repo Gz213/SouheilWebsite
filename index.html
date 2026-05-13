@@ -22,7 +22,6 @@
     <main class="hero-section">
         <div class="hero-content">
             <h2 class="hero-subtitle">SOUL ENTHUSIAST</h2>
-            <h1 class="hero-title">SOUHEIL</h1>
             <p class="hero-tagline">L'âme qui chante, le cœur qui compose.</p>
             <p class="hero-bio">
                 Souheil transcende les genres. En tant qu'auteur-compositeur-interprète, il insuffle une émotion brute et des mélodies profondes à chaque note. Découvrez son univers où la soul rencontre l'authenticité.
@@ -35,6 +34,9 @@
                     <span class="now-playing-label">NOW PLAYING</span>
                     <h3 class="track-title" id="trackTitle">Microwave Love</h3>
                     <p class="track-artist">Souheil</p>
+                    <button class="btn-buy" id="buyBtn">
+                        <i class="ph ph-shopping-cart"></i> BUY TRACK
+                    </button>
                 </div>
 
                 <div class="album-art-wrapper">
@@ -77,8 +79,8 @@
         </div>
     </main>
 
-    <!-- Hidden audio element -->
-    <audio id="audioElement"></audio>
+    <!-- Hidden audio element with download protection -->
+    <audio id="audioElement" controlsList="nodownload" oncontextmenu="return false;"></audio>
 
     <script type="module" src="./main.js"></script>
 </body>
