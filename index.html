@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souheil - Midnight Soul</title>
+    <meta name="description" content="Site officiel de l'artiste soul Souheil. Découvrez son nouvel album Microwave Love.">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Alex+Brush&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for elegant UI -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="grain-overlay"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#music">MUSIC</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#tour">TOUR</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <button class="btn-listen-nav">LISTEN NOW</button>
+    </nav>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-subtitle">SOUL ENTHUSIAST</h2>
+            <h1 class="hero-title">SOUHEIL</h1>
+            <p class="hero-tagline">L'âme qui chante, le cœur qui compose.</p>
+            <p class="hero-bio">
+                Souheil transcende les genres. En tant qu'auteur-compositeur-interprète, il insuffle une émotion brute et des mélodies profondes à chaque note. Découvrez son univers où la soul rencontre l'authenticité.
+            </p>
+        </div>
+
+        <div class="player-container">
+            <div class="glass-player" id="musicPlayer">
+                <div class="player-header">
+                    <span class="now-playing-label">NOW PLAYING</span>
+                    <h3 class="track-title" id="trackTitle">Microwave Love</h3>
+                    <p class="track-artist">Souheil</p>
+                </div>
+
+                <div class="album-art-wrapper">
+                    <img src="./assets/PHOTO-2026-05-12-17-40-21.jpg" alt="Souheil Album Art" class="album-art" id="albumArt">
+                </div>
+
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-thumb" id="progressThumb"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+
+                <div class="controls">
+                    <button class="control-btn secondary-btn" id="shuffleBtn"><i class="ph ph-shuffle"></i></button>
+                    <button class="control-btn primary-btn" id="prevBtn"><i class="ph-fill ph-caret-double-left"></i></button>
+                    <button class="control-btn play-btn" id="playBtn"><i class="ph-fill ph-play"></i></button>
+                    <button class="control-btn primary-btn" id="nextBtn"><i class="ph-fill ph-caret-double-right"></i></button>
+                    <button class="control-btn secondary-btn" id="repeatBtn"><i class="ph ph-repeat"></i></button>
+                </div>
+
+                <div class="volume-container">
+                    <i class="ph ph-speaker-low"></i>
+                    <div class="volume-bar" id="volumeBar">
+                        <div class="volume-progress" id="volumeProgress"></div>
+                        <div class="volume-thumb" id="volumeThumb"></div>
+                    </div>
+                    <i class="ph ph-speaker-high"></i>
+                </div>
+            </div>
+            
+            <div class="playlist-container glass-panel">
+                <h4>Tracklist</h4>
+                <ul class="playlist" id="playlist">
+                    <!-- Tracks injected via JS -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden audio element -->
+    <audio id="audioElement"></audio>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
