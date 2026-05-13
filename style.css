@@ -641,6 +641,40 @@ body {
     }
 }
 
+/* Legal Footer */
+.legal-footer {
+    padding: 6rem 5% 4rem;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(10, 10, 20, 0.4));
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.footer-content p {
+    margin-bottom: 0.8rem;
+}
+
+.footer-content strong {
+    color: var(--primary-indigo-light);
+    font-weight: 600;
+}
+
+.copyright {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-silver);
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
 /* Purchase Overlay & App */
 .purchase-overlay {
     position: fixed;
