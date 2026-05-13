@@ -230,3 +230,46 @@ initPlayer();
 glassPlayer.addEventListener('contextmenu', (e) => {
     e.preventDefault();
 });
+
+// 10 Seconds Preview Limit
+audio.addEventListener('timeupdate', () => {
+    if (audio.currentTime >= 10 && !audio.paused) {
+        pauseSong();
+        audio.currentTime = 0; // Reset to start
+        openPurchaseModal();
+    }
+});
+
+// Purchase App Logic
+const purchaseModal = document.getElementById('purchaseModal');
+const closeApp = document.getElementById('closeApp');
+const buyBtn = document.getElementById('buyBtn');
+const paymentForm = document.getElementById('paymentForm');
+const successMsg = document.getElementById('successMsg');
+const modalTrackTitle = document.getElementById('modalTrackTitle');
+
+function openPurchaseModal() {
+    modalTrackTitle.textContent = tracks[trackIndex].title;
+    purchaseModal.classList.add('active');
+}
+
+buyBtn.addEventListener('click', openPurchaseModal);
+
+closeApp.addEventListener('click', () => {
+    purchaseModal.classList.remove('active');
+    successMsg.classList.remove('active');
+    paymentForm.style.display = 'block';
+});
+
+paymentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    paymentForm.style.display = 'none';
+    successMsg.classList.add('active');
+    
+    // Auto-close after 3 seconds
+    setTimeout(() => {
+        purchaseModal.classList.remove('active');
+        successMsg.classList.remove('active');
+        paymentForm.style.display = 'block';
+    }, 3000);
+});

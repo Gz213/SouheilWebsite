@@ -556,3 +556,149 @@ body {
     .hero-bio { max-width: 100%; }
     .nav-links { display: none; } /* Simplified for demo */
 }
+
+/* Purchase Overlay & App */
+.purchase-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.purchase-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.purchase-app {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+}
+
+.purchase-overlay.active .purchase-app {
+    transform: translateY(0);
+}
+
+.close-app {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.app-header i {
+    font-size: 3rem;
+    color: var(--primary-indigo-light);
+    margin-bottom: 1rem;
+}
+
+.app-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.order-summary {
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.payment-form .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.payment-form label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.payment-form input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.payment-form input:focus {
+    outline: none;
+    border-color: var(--primary-indigo-light);
+}
+
+.input-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn-complete-purchase {
+    width: 100%;
+    background: var(--primary-indigo);
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.btn-complete-purchase:hover {
+    background: var(--primary-indigo-light);
+    transform: scale(1.02);
+}
+
+.success-message {
+    text-align: center;
+    display: none;
+}
+
+.success-message.active {
+    display: block;
+}
+
+.success-message i {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 1.5rem;
+}

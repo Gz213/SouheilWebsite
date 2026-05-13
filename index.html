@@ -82,6 +82,52 @@
     <!-- Hidden audio element with download protection -->
     <audio id="audioElement" controlsList="nodownload" oncontextmenu="return false;"></audio>
 
+    <!-- Purchase App Modal -->
+    <div class="purchase-overlay" id="purchaseModal">
+        <div class="purchase-app">
+            <button class="close-app" id="closeApp"><i class="ph ph-x"></i></button>
+            
+            <div class="app-header">
+                <i class="ph-fill ph-shield-check"></i>
+                <h3>Secure Checkout</h3>
+                <p>Souheil Music Digital Store</p>
+            </div>
+
+            <div class="order-summary">
+                <div class="item-info">
+                    <span class="item-name" id="modalTrackTitle">Microwave Love</span>
+                    <span class="item-price">1.99 €</span>
+                </div>
+            </div>
+
+            <form class="payment-form" id="paymentForm">
+                <div class="input-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" maxlength="19">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Expiry</label>
+                        <input type="text" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="input-group">
+                        <label>CVC</label>
+                        <input type="password" placeholder="***" maxlength="3">
+                    </div>
+                </div>
+                <button type="submit" class="btn-complete-purchase">
+                    <i class="ph-fill ph-credit-card"></i> COMPLETE PURCHASE
+                </button>
+            </form>
+
+            <div class="success-message" id="successMsg">
+                <i class="ph-fill ph-check-circle"></i>
+                <h4>Thank you!</h4>
+                <p>Your download will start shortly.</p>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="./main.js"></script>
 </body>
 </html>
