@@ -563,10 +563,53 @@ body {
 }
 
 @media (max-width: 900px) {
-    .hero-title { font-size: 4rem; }
-    .hero-section { padding: 2rem 5%; flex-direction: column; }
-    .hero-bio { max-width: 100%; }
-    .nav-links { display: none; } /* Simplified for demo */
+    .hero-title { font-size: 3.5rem !important; margin-top: 1rem; }
+    .hero-content { margin-top: 0; }
+    .hero-section { padding: 1rem 5%; flex-direction: column; text-align: center; gap: 2rem; }
+    .hero-bio { max-width: 100%; border-left: none; border-top: 2px solid var(--primary-indigo); padding-left: 0; padding-top: 1.5rem; }
+    .nav-links { display: none; }
+
+    /* Horizontal Slider for Playlist on Mobile */
+    .playlist {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: none;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+
+    .playlist::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+
+    .playlist-item {
+        flex: 0 0 160px; /* Fixed width for sliding items */
+        flex-direction: column;
+        text-align: center;
+        scroll-snap-align: center;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Horizontal Slider for Payment Methods */
+    .payment-methods {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .payment-methods::-webkit-scrollbar {
+        display: none;
+    }
+
+    .method-btn {
+        flex: 0 0 100px;
+    }
 }
 
 /* Purchase Overlay & App */
