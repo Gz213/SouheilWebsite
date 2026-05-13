@@ -29,6 +29,14 @@
     </main>
 
     <style>
+        body.bio-page {
+            background: url('./assets/bio-bg.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-main);
+        }
+        .bio-page .background-effects {
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay to make text pop */
+        }
         .bio-page .bio-container {
             max-width: 800px;
             margin: 4rem auto;
@@ -39,6 +47,8 @@
             text-align: left;
             padding: 4rem;
             margin-top: 2rem;
+            background: rgba(10, 10, 20, 0.4); /* More transparent */
+            backdrop-filter: blur(20px);
         }
         .btn-back {
             color: var(--text-muted);
