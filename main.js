@@ -283,15 +283,35 @@ closeApp.addEventListener('click', () => {
     paymentForm.style.display = 'block';
 });
 
-paymentForm.addEventListener('submit', (e) => {
+// Real Payment Integration
+paymentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    paymentForm.style.display = 'none';
-    successMsg.classList.add('active');
     
-    // Auto-close after 3 seconds
-    setTimeout(() => {
-        purchaseModal.classList.remove('active');
-        successMsg.classList.remove('active');
-        paymentForm.style.display = 'block';
-    }, 3000);
+    const submitBtn = paymentForm.querySelector('.btn-purchase');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="ph ph-spinner-gap fa-spin"></i> TRAITEMENT...';
+    submitBtn.disabled = true;
+
+    try {
+        const response = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                trackName: modalTrackTitle.textContent,
+                price: 500
+            })
+        });
+
+        const data = await response.json();
+        if (data.url) {
+            window.location.href = data.url; // Redirect to Stripe
+        } else {
+            throw new Error(data.error || 'Erreur lors de la création de la session');
+        }
+    } catch (error) {
+        console.error('Payment error:', error);
+        alert('Une erreur est survenue lors du lancement du paiement. Veuillez réessayer.');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }
 });

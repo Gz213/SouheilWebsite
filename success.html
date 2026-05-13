@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Réussi - Souheil</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="success-page">
+    <div class="background-effects">
+        <div class="grain-overlay"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="success-container">
+        <div class="glass-panel success-card">
+            <i class="ph ph-check-circle success-icon"></i>
+            <h1 class="hero-title" style="font-size: 3rem; margin-bottom: 1rem;">MERCI !</h1>
+            <p class="hero-tagline">Votre paiement a été validé avec succès.</p>
+            
+            <div class="download-section">
+                <h3>Votre morceau est prêt</h3>
+                <p class="section-hint">Cliquez sur le bouton ci-dessous pour lancer le téléchargement.</p>
+                <a href="#" class="btn-purchase" style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="ph ph-download-simple"></i> TÉLÉCHARGER LE TITRE
+                </a>
+            </div>
+
+            <a href="index.html" class="btn-back" style="margin-top: 3rem; display: block; color: var(--text-muted); text-decoration: none;">
+                Retourner à l'accueil
+            </a>
+        </div>
+    </main>
+
+    <style>
+        .success-page .success-container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .success-card {
+            max-width: 600px;
+            padding: 4rem;
+        }
+        .success-icon {
+            font-size: 5rem;
+            color: #10b981;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.4));
+        }
+        .download-section {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</body>
+</html>
