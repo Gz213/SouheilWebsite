@@ -12,6 +12,18 @@
     --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem !important;
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--accent-pure) 0%, var(--primary-indigo-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
 .btn-buy {
     background: transparent;
     color: var(--primary-indigo-light);
@@ -635,6 +647,43 @@ body {
     display: flex;
     justify-content: space-between;
     font-weight: 500;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.method-btn {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    padding: 0.8rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition);
+}
+
+.method-btn i {
+    font-size: 1.2rem;
+}
+
+.method-btn:hover {
+    border-color: var(--primary-indigo-light);
+    color: white;
+}
+
+.method-btn.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary-indigo-light);
+    color: white;
 }
 
 .payment-form .input-group {
