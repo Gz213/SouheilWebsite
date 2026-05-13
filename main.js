@@ -283,35 +283,17 @@ closeApp.addEventListener('click', () => {
     paymentForm.style.display = 'block';
 });
 
-// Real Payment Integration
-paymentForm.addEventListener('submit', async (e) => {
+// Stripe Payment Link Integration (No-Code / Free Hosting)
+paymentForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
+    // REMPLACEZ CE LIEN par votre lien de paiement Stripe créé dans votre tableau de bord Stripe
+    const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/votre_lien_ici"; 
+
     const submitBtn = paymentForm.querySelector('.btn-purchase');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<i class="ph ph-spinner-gap fa-spin"></i> TRAITEMENT...';
+    submitBtn.innerHTML = '<i class="ph ph-spinner-gap fa-spin"></i> REDIRECTION...';
     submitBtn.disabled = true;
 
-    try {
-        const response = await fetch('/api/create-checkout-session', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                trackName: modalTrackTitle.textContent,
-                price: 500
-            })
-        });
-
-        const data = await response.json();
-        if (data.url) {
-            window.location.href = data.url; // Redirect to Stripe
-        } else {
-            throw new Error(data.error || 'Erreur lors de la création de la session');
-        }
-    } catch (error) {
-        console.error('Payment error:', error);
-        alert('Une erreur est survenue lors du lancement du paiement. Veuillez réessayer.');
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }
+    // Redirection directe vers la page de paiement Stripe
+    window.location.href = STRIPE_PAYMENT_LINK;
 });
