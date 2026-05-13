@@ -134,6 +134,12 @@ progressContainer.addEventListener('mousedown', (e) => {
     updateProgress(e);
 });
 
+// Touch support for progress
+progressContainer.addEventListener('touchstart', (e) => {
+    isDraggingProgress = true;
+    updateProgress(e.touches[0]);
+}, { passive: true });
+
 // Volume Dragging
 let isDraggingVolume = false;
 
@@ -142,17 +148,35 @@ volumeBar.addEventListener('mousedown', (e) => {
     updateVolume(e);
 });
 
+// Touch support for volume
+volumeBar.addEventListener('touchstart', (e) => {
+    isDraggingVolume = true;
+    updateVolume(e.touches[0]);
+}, { passive: true });
+
 // Window events to handle dragging outside the element
 window.addEventListener('mousemove', (e) => {
-    if (isDraggingProgress) {
-        updateProgress(e);
-    }
-    if (isDraggingVolume) {
-        updateVolume(e);
-    }
+    if (isDraggingProgress) updateProgress(e);
+    if (isDraggingVolume) updateVolume(e);
 });
 
+window.addEventListener('touchmove', (e) => {
+    if (isDraggingProgress) {
+        updateProgress(e.touches[0]);
+        e.preventDefault(); // Prevent scrolling while dragging
+    }
+    if (isDraggingVolume) {
+        updateVolume(e.touches[0]);
+        e.preventDefault(); // Prevent scrolling while dragging
+    }
+}, { passive: false });
+
 window.addEventListener('mouseup', () => {
+    isDraggingProgress = false;
+    isDraggingVolume = false;
+});
+
+window.addEventListener('touchend', () => {
     isDraggingProgress = false;
     isDraggingVolume = false;
 });
@@ -231,12 +255,10 @@ glassPlayer.addEventListener('contextmenu', (e) => {
     e.preventDefault();
 });
 
-// 10 Seconds Preview Limit
+// 10 Seconds Preview Limit (Discovery Mode)
 audio.addEventListener('timeupdate', () => {
     if (audio.currentTime >= 10 && !audio.paused) {
-        pauseSong();
-        audio.currentTime = 0; // Reset to start
-        openPurchaseModal();
+        nextSong(); // Change to next track automatically
     }
 });
 
